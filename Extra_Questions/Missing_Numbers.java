@@ -1,5 +1,4 @@
-
-    import java.util.Arrays;
+import java.util.Arrays;
 
 public class Missing_Numbers {
     
@@ -16,9 +15,9 @@ public class Missing_Numbers {
         return expectedSum - actualSum;
     }
 
-
     public static void main(String[] args) {
-        Solution solver = new Solution();
+        // FIXED: Changed type and constructor from Roman_TO_Integer to Missing_Numbers
+        Missing_Numbers solver = new Missing_Numbers();
 
         // Test Case 1
         int[] test1 = {3, 0, 1};
@@ -38,5 +37,3 @@ public class Missing_Numbers {
         System.out.println("Output: " + solver.missingNumber(test3)); // Expected: 8
     }
 }
-
-
