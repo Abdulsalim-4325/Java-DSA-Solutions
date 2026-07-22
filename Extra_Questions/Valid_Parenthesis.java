@@ -48,12 +48,14 @@ s consists of parentheses only '()[]{}'.
 
 
 
-class Solution {
+import java.util.Stack;
+
+public class Valid_Parenthesis {
+    
+   
     public boolean isValid(String s) {
-       
         Stack<Character> stack = new Stack<>();
         
-       
         for (char c : s.toCharArray()) {
             
             if (c == '(') {
@@ -70,7 +72,41 @@ class Solution {
             }
         }
         
-        
+       
         return stack.isEmpty();
+    }
+
+    
+    public static void main(String[] args) {
+        Valid_Parenthesis solver = new Valid_Parenthesis();
+
+        // Test Case 1: 
+        String test1 = "()";
+        System.out.println("Input: s = \"" + test1 + "\"");
+        System.out.println("Output: " + solver.isValid(test1)); // Expected: true
+        System.out.println();
+
+        // Test Case 2: 
+        String test2 = "()[]{}";
+        System.out.println("Input: s = \"" + test2 + "\"");
+        System.out.println("Output: " + solver.isValid(test2)); // Expected: true
+        System.out.println();
+
+        // Test Case 3: 
+        String test3 = "(]";
+        System.out.println("Input: s = \"" + test3 + "\"");
+        System.out.println("Output: " + solver.isValid(test3)); // Expected: false
+        System.out.println();
+
+        // Test Case 4: 
+        String test4 = "([])";
+        System.out.println("Input: s = \"" + test4 + "\"");
+        System.out.println("Output: " + solver.isValid(test4)); // Expected: true
+        System.out.println();
+
+        // Test Case 5: 
+        String test5 = "([)]";
+        System.out.println("Input: s = \"" + test5 + "\"");
+        System.out.println("Output: " + solver.isValid(test5)); // Expected: false
     }
 }

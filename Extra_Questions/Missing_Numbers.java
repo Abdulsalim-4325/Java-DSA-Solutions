@@ -1,9 +1,8 @@
-
-    import java.util.Arrays;
+import java.util.Arrays;
 
 public class Missing_Numbers {
     
-    // Optimised solution using the Math Summation formula
+    
     public int missingNumber(int[] nums) {
         int n = nums.length;
         int expectedSum = n * (n + 1) / 2;
@@ -16,9 +15,9 @@ public class Missing_Numbers {
         return expectedSum - actualSum;
     }
 
-
     public static void main(String[] args) {
-        Solution solver = new Solution();
+       
+        Missing_Numbers solver = new Missing_Numbers();
 
         // Test Case 1
         int[] test1 = {3, 0, 1};
@@ -38,5 +37,3 @@ public class Missing_Numbers {
         System.out.println("Output: " + solver.missingNumber(test3)); // Expected: 8
     }
 }
-
-
