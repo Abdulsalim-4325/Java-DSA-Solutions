@@ -1,4 +1,4 @@
-```java
+
 /*
 Split Array into Minimum Subsets
 
@@ -85,4 +85,4 @@ public class Split_Array_Into_Minimum_Subsets {
         // Expected: 1
     }
 }
-```
+
