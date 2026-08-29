@@ -1,4 +1,4 @@
-public /*
+/*
  * LeetCode 3734. Lexicographically Smallest Palindromic Permutation Greater Than Target
  * 
  * You are given two strings s and target, each of length n, consisting of lowercase English letters.
@@ -138,6 +138,6 @@ class Solution {
         }
         return true;
     }
-} {
+} 
     
-}
+
