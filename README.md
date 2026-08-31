@@ -1,91 +1,96 @@
-# Data Structures & Algorithms (DSA) Tracker 🚀
+# Data Structures & Algorithms (DSA) Tracker
 
-Welcome to my central repository for tracking core Data Structures and Algorithms problems. This repository serves as a daily practice laboratory focused on refining asymptotic runtime efficiencies (\(O(N)\)), micro-optimizations, memory footprints, and architectural clean-coding practices in Java.
+A structured Java repository for practising core data structures, algorithms, and problem-solving patterns. Each problem is maintained as a standalone, runnable Java program with a problem-based class name, explanatory comments, and sample test cases for local execution in Visual Studio Code.
 
-## 📂 Repository Structure
+The repository currently indexes **80 solved problems**. Files are organised by their **primary algorithmic technique** so that revision remains predictable as the collection grows. A solution may use supporting ideas from another category; its folder reflects the dominant technique.
 
-The architecture of this repository separates problems by foundational data structures and algorithm paradigms for seamless scalability.
+## Repository Design Principles
+
+- **Correctness first:** solutions are designed to handle boundary conditions and platform constraints.
+- **Optimal asymptotic design:** each implementation targets the expected optimal time and auxiliary-space complexity.
+- **Standalone Java execution:** every file can be compiled and executed independently; no package declaration is required.
+- **Clean source organisation:** folders represent primary DSA categories rather than a catch-all collection of questions.
+- **Traceable commits:** commits follow `DSA (Platform - Difficulty) | Added <Problem Name> solution in Java`.
+
+## Repository Structure
 
 ```text
 .
-├── 📂 Arrays/
-│   ├── 📜 Single_Number.java                  # Bitwise XOR evaluation (LC-Easy)
-│   └── 📜 Two_sum.java                        # Companion hashing index map (LC-Easy)
-├── 📂 Linked_List/
-│   └── 📜 Merge_Two_Sorted_Lists.java         # Sentinel node pointer splicing (LC-Easy)
-├── 📂 Search-Algorithms/
-│   ├── 📜 BinarySearch.java                   # Iterative interval reduction (LC-Easy)
-│   └── 📜 RecursiveBinarySearch.java          # Call-stack divide & conquer (LC-Easy)
-└── 📂 Extra_Questions/
-    ├── 📜 Add_Binary.java                     # Bit-by-bit ripple carry simulation (LC-Easy)
-    ├── 📜 Best_Time_To_Buy_And_Sell_Stock.java # Single-pass greedy peak-valley tracking (LC-Easy)
-    ├── 📜 Integer_To_Roman.java               # Decreasing radix baseline subtraction (LC-Medium)
-    ├── 📜 Longest_Common_Prefix.java          # Horizontal scanning compaction match (LC-Easy)
-    ├── 📜 Missing_Numbers.java                # Gauss sum vs accumulation arithmetic (LC-Easy)
-    ├── 📜 Palindrome_Number.java              # Integer inversion check without strings (LC-Easy)
-    ├── 📜 Plus_One.java                       # Array-based backward carry cascade (LC-Easy)
-    ├── 📜 Reverse_Integer.java                # Overflow-guarded 32-bit digit extraction (LC-Medium)
-    ├── 📜 Roman_TO_Integer.java               # Look-ahead contextual subtraction parsing (LC-Easy)
-    ├── 📜 Square_Root_Of_X.java               # Non-linear monotonic binary search boundary (LC-Easy)
-    ├── 📜 Valid_Palindrome.java               # Double-ended filtering pointer iteration (LC-Easy)
-    └── 📜 Valid_Parenthesis.java              # Stack-based linear bracket balance map (LC-Easy)
-```
-
----
-
-## 📊 Technical Problem Matrix
-
-| Problem File | Core Technique / Pattern | Time Complexity | Space Complexity | Platform Category |
-| :--- | :--- | :---: | :---: | :---: |
-| **`Single_Number.java`** | Bit Manipulation (XOR `^`) | $O(N)$ | $O(1)$ | LeetCode Easy |
-| **`Two_sum.java`** | Complement Hashing (`HashMap`) | $O(N)$ | $O(N)$ | LeetCode Easy |
-| **`Merge_Two_Sorted_Lists.java`** | Two-Pointer / Sentinel Node Splicing | $O(N + M)$ | $O(1)$ | LeetCode Easy |
-| **`BinarySearch.java`** | Two-Pointer Interval Bisection | $O(\log N)$ | $O(1)$ | LeetCode Easy |
-| **`RecursiveBinarySearch.java`** | Divide-and-Conquer Recurrence | $O(\log N)$ | $O(\log N)$ | LeetCode Easy |
-| **`Add_Binary.java`** | Two-Pointer Array Arithmetic Simulation | $O(\max(N, M))$ | $O(1)$ | LeetCode Easy |
-| **`Best_Time_To_Buy_And_Sell_Stock.java`**| Greedy Scan / Local Minimum Tracking | $O(N)$ | $O(1)$ | LeetCode Easy |
-| **`Integer_To_Roman.java`** | Greedy Linear Threshold Match | $O(1)$ | $O(1)$ | LeetCode Medium |
-| **`Longest_Common_Prefix.java`** | Horizontal Prefix Truncation Scan | $O(S)$ | $O(1)$ | LeetCode Easy |
-| **`Missing_Numbers.java`** | Mathematical Formula (Gauss Series Sum) | $O(N)$ | $O(1)$ | LeetCode Easy |
-| **`Palindrome_Number.java`** | Digit Modulo Reflection Logic | $O(\log_{10} N)$| $O(1)$ | LeetCode Easy |
-| **`Plus_One.java`** | Ripple Carry Array Simulation | $O(N)$ | $O(1)$ | LeetCode Easy |
-| **`Reverse_Integer.java`** | Overflow-Aware Bit Boundary Guarding | $O(\log_{10} N)$| $O(1)$ | LeetCode Medium |
-| **`Roman_TO_Integer.java`** | Forward-Looking Contextual Subtract | $O(N)$ | $O(1)$ | LeetCode Easy |
-| **`Square_Root_Of_X.java`** | Integer Domain Binary Space Search | $O(\log N)$ | $O(1)$ | LeetCode Easy |
-| **`Valid_Palindrome.java`** | In-Place Two-Pointer Alphanumeric Filter| $O(N)$ | $O(1)$ | LeetCode Easy |
-| **`Valid_Parenthesis.java`** | Linear Dynamic Stack Matching (`Stack`) | $O(N)$ | $O(N)$ | LeetCode Easy |
-
----
-
-## 🛠️ Compilation & Execution Guidelines
-
-These solutions are engineered as standalone drivers featuring bundled execution suites inside their respective `main` frameworks, optimized for direct instantiation within **Visual Studio Code**.
-
-### Requirements
-- **Java Development Kit (JDK)**: Version 11 or higher recommended.
-- **VS Code Extensions**: *Extension Pack for Java* (by Microsoft).
-
-### Execution Flow via Terminal
-To test code logic directly without a full build runner, navigate to the target module directory and execute:
-
-```bash
-# Navigate to subfolder
-cd Extra_Questions
-
-# Compile the driver code
-javac Plus_One.java
-
-# Execute the bytecode target
-java Plus_One
-```
-
----
-
-## 📈 Engineering Log Notes & Insights
-
-- **Avoiding Intermediate Allocations:** In string parsing problems like `Valid_Palindrome.java`, I leveraged an in-place bidirectional pointer approach instead of relying on regex replacements (`s.replaceAll(...)`). This avoids unnecessary string allocations on the heap, maintaining low memory consumption ($O(1)$ auxiliary space).
-- **Handling Integer Overflow Thresholds:** In `Reverse_Integer.java`, checking constraints using `Integer.MAX_VALUE / 10` *prior* to compounding the arithmetic calculation guarantees protection against 32-bit internal register wrap-around errors without resorting to 64-bit `long` types.
-- **Bitwise Logic Optimization:** For `Single_Number.java`, utilizing the commutative property of the XOR operator ($A \oplus B \oplus A = B$) allowed me to find the unrepeated element in a single pass without using memory-intensive hash tables.
-
----
-💡 *This workspace is iteratively updated on a daily basis with new algorithm optimizations and clean design patterns.*
+├── Arrays/
+│   ├── Best_Time_To_Buy_And_Sell_Stock.java
+│   ├── Find_Missing_Elements.java
+│   ├── Length_Of_Longest_Subarray_With_At_Most_K_Frequency.java
+│   ├── Max_Sum_Subarray_Of_Size_At_Least_K.java
+│   ├── Maximum_Product_Of_Three_Numbers.java
+│   ├── Maximum_Product_Of_Two_Elements_In_An_Array.java
+│   ├── Min_Product_Subset.java
+│   ├── Pairs_With_Less_Than_K_Diff.java
+│   ├── Plus_One.java
+│   ├── Remove_Duplicates_From_Sorted_Array.java
+│   ├── Remove_Element.java
+│   ├── Removing_Minimum_and_Maximum_From_Array.java
+│   ├── Smallest_Missing_Integer_Greater_Than_Sequential_Prefix_Sum.java
+│   └── Split_Array_Into_Minimum_Subsets.java
+├── Binary_Search/
+│   ├── BinarySearch.java
+│   ├── Median_Of_Two_Sorted_Arrays.java
+│   ├── RecursiveBinarySearch.java
+│   ├── Search_Insert_Position.java
+│   └── Square_Root_Of_X.java
+├── Bit_Manipulation/
+│   ├── Longest_Subsequence_With_Non_Zero_Bitwise_XOR.java
+│   ├── Maximum_Subset_XOR.java
+│   ├── Number_Of_Unique_XOR_Triplets_I.java
+│   ├── Number_Of_Unique_XOR_Triplets_II.java
+│   └── Single_Number.java
+├── Dynamic_Programming/
+│   ├── Count_Arrays_With_Divisible_Adjacent_Elements.java
+│   ├── Count_Subsequences_Divisible_by_n.java
+│   ├── Friends_Pairing_Problem.java
+│   ├── GFG_Adventure_In_A_Maze.java
+│   ├── High_Effort_vs_Low_Effort.java
+│   ├── Largest_Zigzag_Sequence.java
+│   ├── Minimum_Cost_Selection.java
+│   ├── Minimum_Cost_for_n_Characters.java
+│   ├── Minimum_Increment_Or_Double_Operations_To_Convert.java
+│   ├── Predict_The_Winner.java
+│   ├── Stone_Game_II.java
+│   ├── Stone_Game_III.java
+│   ├── Stone_Game_IV.java
+│   ├── Stone_Game_V.java
+│   └── Subset_Sum_On_Generated_Sequence.java
+├── Game_Theory/
+│   ├── Stone_Game.java
+│   └── Stone_Game_IX.java
+├── Graphs/
+│   ├── Longest_Path_In_A_Directed_Acyclic_Graph.java
+│   ├── Min_Edge_Movements_To_Connect_A_Graph.java
+│   ├── Remove_Methods_From_Project.java
+│   ├── Shortest_Path_In_1_2_Graph.java
+│   └── Snake_And_Ladder_Problem.java
+├── Hashing/
+│   ├── Contains_Duplicate_II.java
+│   └── Two_sum.java
+├── Linked_List/
+│   └── Merge_Two_Sorted_Lists.java
+├── Math/
+│   ├── Find_Greatest_Common_Divisor_Of_Array.java
+│   ├── Integer_To_Roman.java
+│   ├── Maximum_Product_Of_Two_Digits.java
+│   ├── Missing_Numbers.java
+│   ├── Numbers_Without_Digit.java
+│   ├── Palindrome_Number.java
+│   ├── Reverse_Integer.java
+│   ├── Roman_TO_Integer.java
+│   └── Smallest_Divisible_Digit_Product_I.java
+├── Prefix_Sum/
+│   ├── Largest_Odd_Squares_with_Limited_1s.java
+│   ├── Maximum_Sum_Of_K_X_K_Sub_Grid.java
+│   ├── Maximum_Value_After_Range_Increment_Operations.java
+│   └── Subarrays_With_Sum_In_Range.java
+├── Segment_Tree/
+│   └── Longest_Substring_Of_One_Repeating_Character.java
+├── Sorting/
+│   ├── Make_Lexicographically_Smallest_Array_by_Swapping_Elements.java
+│   └── Marks_from_Ranks.java
+├── Stack/
