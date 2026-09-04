@@ -1,0 +1,70 @@
+/*
+ * Bird and Max Fruit Gathering
+ * Difficulty: Easy | Accuracy: 65.83% | Submissions: 7K+ | Points: 2
+ * 
+ * Given an array arr[] representing the fruit values of trees arranged in a circle and 
+ * an integer m, find the maximum total fruits the bird can collect by visiting at most m trees.
+ * Bird can start from any tree and move to a neighboring tree.
+ * The first and last trees are also considered neighbors.
+ * The bird collects the fruit value of every tree it visits.
+ * 
+ * Examples:
+ * 
+ * Input: arr[] = [2, 1, 3, 5, 0, 1, 4], m = 3
+ * Output: 9
+ * Explanation: The bird can start from the second tree and visit the second, third, and fourth trees.
+ * The total fruit value collected is 1 + 3 + 5 = 9.
+ * 
+ * Input: arr[] = [1, 6, 2, 5, 3, 4], m = 2
+ * Output: 8
+ * 
+ * Input: arr[] = [7, 2, 1, 3, 4], m = 2
+ * Output: 11
+ * 
+ * Constraints:
+ * arr.size() <= 10^6
+ * 0 <= arr[i] <= 10^6
+ * 1 <= m <= arr.size()
+ */
+
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class Bird_and_Max_Fruit_Gathering {
+    public static void main(String[] args) {
+        Solution solver = new Solution();
+
+        ArrayList<Integer> arr1 = new ArrayList<>(Arrays.asList(2, 1, 3, 5, 0, 1, 4));
+        System.out.println("Test Case 1: " + solver.maxFruits(arr1, 3)); // Expected: 9
+
+        ArrayList<Integer> arr2 = new ArrayList<>(Arrays.asList(1, 6, 2, 5, 3, 4));
+        System.out.println("Test Case 2: " + solver.maxFruits(arr2, 2)); // Expected: 8
+
+        ArrayList<Integer> arr3 = new ArrayList<>(Arrays.asList(7, 2, 1, 3, 4));
+        System.out.println("Test Case 3: " + solver.maxFruits(arr3, 2)); // Expected: 11
+    }
+}
+
+class Solution {
+    public int maxFruits(ArrayList<Integer> arr, int m) {
+        int n = arr.size();
+        int currentSum = 0;
+        
+        for (int i = 0; i < m; i++) {
+            currentSum += arr.get(i);
+        }
+        
+        int maxSum = currentSum;
+        
+        for (int i = 1; i < n; i++) {
+            currentSum -= arr.get(i - 1);
+            currentSum += arr.get((i + m - 1) % n);
+            
+            if (currentSum > maxSum) {
+                maxSum = currentSum;
+            }
+        }
+        
+        return maxSum;
+    }
+}
